@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem
+            id="menu_root"
+            name="QL_nhan_su"
+            sequence="0"
+        />
+
+        <menuitem 
+            name="Quản lý nhân viên" 
+            id="menu_quan_ly_nhan_vien" 
+            parent="menu_root" 
+            sequence="1"
+        />
+
+        <menuitem 
+            name="Thông tin nhân viên" 
+            id="menu_tt_nhan_vien" 
+            parent="menu_quan_ly_nhan_vien" 
+            sequence="1"
+            action="action_tt_nhan_vien"
+        />
+        <menuitem 
+            name="Đơn vị nhân viên" 
+            id="menu_don_vi" 
+            parent="menu_quan_ly_nhan_vien" 
+            sequence="3"
+            action="action_don_vi"
+        />
+        <menuitem 
+            name="Bộ phận nhân viên" 
+            id="menu_bo_phan" 
+            parent="menu_quan_ly_nhan_vien" 
+            sequence="4"
+            action="action_bo_phan"
+        />
+
+        <menuitem 
+            name="Phân công làm việc" 
+            id="menu_phan_cong_lam_viec" 
+            parent="menu_root" 
+            sequence="2"
+        />
+        <menuitem 
+            name="Bảng chấm công" 
+            id="menu_bang_cham_cong" 
+            parent="menu_phan_cong_lam_viec" 
+            sequence="1"
+            action="action_bang_cham_cong"
+        />
+        <menuitem 
+            name="Dự án" 
+            id="menu_lich_lam_viec" 
+            parent="menu_phan_cong_lam_viec" 
+            sequence="2"
+            action="action_lich_lam_viec"
+        />
+        <menuitem 
+            name="Thông tin công việc" 
+            id="menu_cong_viec" 
+            parent="menu_phan_cong_lam_viec" 
+            sequence="3"
+            action="action_cong_viec"
+        />
+
+        <menuitem 
+            name="Học vấn" 
+            id="menu_hoc_van" 
+            parent="menu_root" 
+            sequence="3"
+        />
+        <menuitem 
+            name="Trình độ học vấn" 
+            id="menu_trinh_do_hoc_van" 
+            parent="menu_hoc_van" 
+            sequence="1"
+            action="action_trinh_do_hoc_van"
+        />
+        <menuitem 
+            name="Bằng cấp" 
+            id="menu_bang_cap_nv" 
+            parent="menu_hoc_van" 
+            sequence="2"
+            action="action_bang_cap_nv"
+        />
+        <menuitem 
+            name="Chứng chỉ" 
+            id="menu_chung_chi_nv" 
+            parent="menu_hoc_van" 
+            sequence="3"
+            action="action_chung_chi_nv"
+        />
+        <menuitem 
+            name="Khen thưởng" 
+            id="menu_khen_thuong" 
+            parent="menu_hoc_van" 
+            sequence="4"
+            action="action_khen_thuong"
+        />
+
+         <menuitem 
+            name="Thu nhập " 
+            id="menu_thu_nhap" 
+            parent="menu_root" 
+            sequence="4"
+        />        
+        <menuitem 
+            name="Lương nhân viên" 
+            id="menu_luong" 
+            parent="menu_thu_nhap" 
+            sequence="1"
+            action="action_luong"
+        />
+        <menuitem 
+            name="Lương thưởng" 
+            id="menu_thuong" 
+            parent="menu_thu_nhap" 
+            sequence="2"
+            action="action_thuong"
+        />
+        <menuitem 
+            name="Bảo hiểm" 
+            id="menu_bao_hiem" 
+            parent="menu_thu_nhap" 
+            sequence="3"
+            action="action_bao_hiem"
+        />
+        <menuitem 
+            name="Lương năm" 
+            id="menu_luong_nam" 
+            parent="menu_thu_nhap" 
+            sequence="4"
+            action="action_luong_nam"
+        />
+
+        <menuitem 
+            name="Đào tạo" 
+            id="menu_dao_tao" 
+            parent="menu_root" 
+            sequence="5"
+            action="action_dao_tao"
+        />
+
+        <menuitem 
+            name="Thống kê" 
+            id="menu_thong_ke" 
+            parent="menu_root" 
+            sequence="6"
+            action="action_thong_ke"
+        />
+    </data>
+</odoo>

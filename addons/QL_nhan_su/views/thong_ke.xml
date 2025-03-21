@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_thong_ke_form" model="ir.ui.view">
+            <field name="name">thong_ke</field>
+            <field name="model">thong_ke</field>
+            <field name="arch" type="xml">
+                <form>
+                     <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Thống kê</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="tt_nhan_vien_id"/>
+                            <field name="ten_nhan_vien"/>
+                            <field name="cccd"/>
+                            <field name="email"/>
+                            <field name="dia_chi"/>
+                            <field name="chuc_vu"/>
+                            <field name="bo_phan"/>
+                            <field name="don_vi"/>
+                            <field name="ngay_bat_dau"/>
+                            <field name="ngay_bao_cao"/>
+                            <field name="ghi_chu"/>
+                        </group>
+                        <notebook>
+                            <page string="Thống kê cá nhân">
+                                <group col="2">
+                                    <field name="so_ngay_lam"/>
+                                    <field name="so_ngay_nghi"/>
+                                    <field name="tong_gio_lam"/>
+                                    <field name="so_bang_cap"/>
+                                    <field name="so_chung_chi"/>
+                                    <field name="so_du_an"/>
+                                    <field name="so_bang_khen"/>
+                                </group>
+                            </page>
+                            <page string="Thống kê tổ chức">
+                                <group col="2">
+                                    <field name="so_nhan_vien_don_vi"/>
+                                    <field name="so_nhan_vien_bo_phan"/>
+                                </group>
+                            </page>
+                            <page string="Danh sách Thưởng">
+                                <group col="2">
+                                    <field name="tt_nhan_vien_id"/>
+                                    <field name="ten_nhan_vien"/>
+                                    <field name="so_luong_thuong"/>
+                                    <field name="tong_thuong"/>
+                                    <field name="ly_do_thuong"/>
+                                    <field name="ngay_thuong"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_thong_ke_tree" model="ir.ui.view">
+            <field name="name">thong_ke.tree</field>
+            <field name="model">thong_ke</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="ngay_bao_cao"/>
+                    <field name="so_ngay_lam"/>
+                    <field name="so_ngay_nghi"/>
+                    <field name="tong_gio_lam"/>
+                    <field name="so_nhan_vien_don_vi"/>
+                    <field name="so_nhan_vien_bo_phan"/>
+                    <field name="tong_thuong"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="thong_ke_search">
+            <field name="model">thong_ke</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="ngay_bao_cao"/>
+                    <field name="so_ngay_lam"/>
+                    <field name="so_ngay_nghi"/>
+                    <field name="tong_gio_lam"/>
+                    <field name="so_nhan_vien_don_vi"/>
+                    <field name="so_nhan_vien_bo_phan"/>
+                    <field name="tong_thuong"/>
+                    <group expand="0" string="Bộ lọc">
+                        <filter name="ngay_bao_cao_thang" string="Tháng này" domain="[('ngay_bao_cao', '>=', context_today().replace(day=1))]"/>
+                        <filter name="nhan_vien_don_vi" string="Theo đơn vị" domain="[('so_nhan_vien_don_vi', '>', 0)]"/>
+                        <filter name="nhan_vien_bo_phan" string="Theo bộ phận" domain="[('so_nhan_vien_bo_phan', '>', 0)]"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_thong_ke_graph" model="ir.ui.view">
+            <field name="name">thong_ke_graph</field>
+            <field name="model">thong_ke</field>
+            <field name="arch" type="xml">
+                <graph string="Thống kê Nhân Viên" type="bar">
+                    <field name="don_vi" type="row"/>
+                    <field name="bo_phan" type="row"/>
+                    <field name="chuc_vu" type="row"/>
+                    <field name="so_bang_khen" type="measure"/>
+                    <field name="so_du_an" type="measure"/>
+                    <field name="so_ngay_lam" type="measure"/>
+                    <field name="tong_thuong" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="action_thong_ke" model="ir.actions.act_window">
+            <field name="name">Thống kê</field>
+            <field name="res_model">thong_ke</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="search_view_id" ref = "thong_ke_search"/>
+        </record>
+    </data>
+</odoo>
+        
+    

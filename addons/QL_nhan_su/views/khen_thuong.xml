@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_khen_thuong_form" model="ir.ui.view">
+            <field name="name">khen_thuong</field>
+            <field name="model">khen_thuong</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Khen thưởng</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="tt_nhan_vien_id"/>
+                            <field name="ten_nhan_vien"/>
+                            <field name="don_vi_id"/>
+                            <field name="bo_phan_id"/>
+                            <field name="ten_bang_khen"/>
+                            <field name="thoi_gian_cap"/>
+                            <field name="ly_do"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_khen_thuong_tree" model="ir.ui.view">
+            <field name="name">khen_thuong</field>
+            <field name="model">khen_thuong</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="don_vi_id"/>
+                    <field name="bo_phan_id"/>
+                    <field name="ten_bang_khen"/>
+                    <field name="thoi_gian_cap"/>
+                    <field name="ly_do"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="khen_thuong_search">
+            <field name="model">khen_thuong</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="don_vi_id"/>
+                    <field name="bo_phan_id"/>
+                    <field name="ten_bang_khen"/>
+                    <field name="thoi_gian_cap"/>
+                    <field name="ly_do"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_khen_thuong" model="ir.actions.act_window">
+            <field name="name">Khen thưởng</field>
+            <field name="res_model">khen_thuong</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref = "khen_thuong_search"/>
+        </record>
+    </data>
+</odoo>
+        
+    

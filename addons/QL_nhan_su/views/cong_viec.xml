@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_cong_viec_form" model="ir.ui.view">
+            <field name="name">cong_viec</field>
+            <field name="model">cong_viec</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Thông tin công việc</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="tt_nhan_vien_id"/>
+                            <field name="ten_nhan_vien"/>
+                            <field name="don_vi_id"/>
+                            <field name="bo_phan_id"/>
+                            <field name="ngay_bat_dau"/>
+                            <field name="luong_co_ban"/>
+                            <field name="phu_cap"/>
+                            <field name="trang_thai"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_cong_viec_tree" model="ir.ui.view">
+            <field name="name">cong_viec</field>
+            <field name="model">cong_viec</field>
+            <field name="arch" type="xml">
+                <tree decoration-success="trang_thai == 'dang_lam'"
+                    decoration-danger="trang_thai == 'tam_nghi'"
+                    decoration-warning="trang_thai == 'thoi_viec'">
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="don_vi_id"/>
+                    <field name="bo_phan_id"/>
+                    <field name="ngay_bat_dau"/>
+                    <field name="luong_co_ban"/>
+                    <field name="phu_cap"/>
+                    <field name="trang_thai"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cong_viec_search">
+            <field name="model">cong_viec</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="don_vi_id"/>
+                    <field name="bo_phan_id"/>
+                    <field name="ngay_bat_dau"/>
+                    <field name="luong_co_ban"/>
+                    <field name="phu_cap"/>
+                    <field name="trang_thai"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_cong_viec" model="ir.actions.act_window">
+            <field name="name">Thông tin công việc</field>
+            <field name="res_model">cong_viec</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref = "cong_viec_search"/>
+        </record>
+    </data>
+</odoo>
+        
+    

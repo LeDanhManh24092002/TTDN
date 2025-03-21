@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_thuong_form" model="ir.ui.view">
+            <field name="name">thuong</field>
+            <field name="model">thuong</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Thưởng nhân viên</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="ten"/>
+                            <field name="tt_nhan_vien_id"/>
+                            <field name="ten_nhan_vien"/>
+                            <field name="bo_phan_id"/>
+                            <field name="don_vi_id"/>
+                            <field name="ten"/>     
+                            <field name="ly_do_thuong"/>
+                            <field name="ngay_thuong"/>
+                            <field name="thanh_tien"/>
+                            <field name="trang_thai"/>
+                            <field name="ghi_chu"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_thuong_tree" model="ir.ui.view">
+            <field name="name">thuong</field>
+            <field name="model">thuong</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten"/>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="bo_phan_id"/>
+                    <field name="don_vi_id"/>
+                    <field name="ten"/>
+                    <field name="ly_do_thuong"/>
+                    <field name="ngay_thuong"/>
+                    <field name="thanh_tien"/>
+                    <field name="trang_thai"/>
+                    <field name="ghi_chu"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="thuong_search">
+            <field name="model">thuong</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="bo_phan_id"/>
+                    <field name="don_vi_id"/>
+                    <field name="ten"/>
+                    <field name="ly_do_thuong"/>
+                    <field name="ngay_thuong"/>
+                    <field name="thanh_tien"/>
+                    <field name="trang_thai"/>
+                    <field name="ghi_chu"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_thuong" model="ir.actions.act_window">
+            <field name="name">Thưởng nhân viên </field>
+            <field name="res_model">thuong</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref = "thuong_search"/>
+        </record>
+    </data>
+</odoo>
+        
+    

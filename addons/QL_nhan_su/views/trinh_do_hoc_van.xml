@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_trinh_do_hoc_van_form" model="ir.ui.view">
+            <field name="name">trinh_do_hoc_van</field>
+            <field name="model">trinh_do_hoc_van</field>
+            <field name="arch" type="xml">
+                    <form string="Trình độ học vấn">
+                    <sheet>
+                        <group>
+                            <group string="Thông tin nhân viên">
+                                <field name="tt_nhan_vien_id"/>
+                                <field name="ten_nhan_vien"/>
+                            </group>
+
+                            <group col="2">
+                                <!-- Thông tin BẰNG CẤP -->
+                                <group string="Bằng cấp" col="2">
+                                    <field name="bang_cap_nv_id"/>
+                                    <field name="ten_bang_cap_nv"/>
+                                    <field name="truong_dao_tao"/>
+                                    <field name="chuyen_nganh"/>
+                                    <field name="hinh_thuc_dao_tao"/>
+                                    <field name="thoi_gian_cap_bang_cap"/>
+                                </group>
+
+                                <!-- Thông tin CHỨNG CHỈ -->
+                                <group string="Chứng chỉ" col="2">
+                                    <field name="chung_chi_nv_id"/>
+                                    <field name="ten_chung_chi_nv"/>
+                                    <field name="loai_chung_chi_nv"/>
+                                    <field name="thoi_gian_cap_chung_chi"/>
+                                    <field name="ngay_het_han"/>
+                                </group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_trinh_do_hoc_van_tree" model="ir.ui.view">
+            <field name="name">trinh_do_hoc_van</field>
+            <field name="model">trinh_do_hoc_van</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="bang_cap_nv_id"/>
+                    <field name="chung_chi_nv_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="trinh_do_hoc_van_search">
+            <field name="model">trinh_do_hoc_van</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="bang_cap_nv_id"/>
+                    <field name="chung_chi_nv_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_trinh_do_hoc_van" model="ir.actions.act_window">
+            <field name="name">Trình độ học vấn </field>
+            <field name="res_model">trinh_do_hoc_van</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref = "trinh_do_hoc_van_search"/>
+        </record>
+    </data>
+</odoo>
+        
+    

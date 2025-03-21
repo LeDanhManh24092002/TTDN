@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_luong_nam_form" model="ir.ui.view">
+            <field name="name">luong_nam</field>
+            <field name="model">luong_nam</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Lương năm</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="tt_nhan_vien_id"/>
+                            <field name="ten_nhan_vien"/>
+                            <field name="bo_phan_id"/>
+                            <field name="nam_luong"/>
+                            <field name="tong_luong_nam"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_luong_nam_tree" model="ir.ui.view">
+            <field name="name">luong_nam</field>
+            <field name="model">luong_nam</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="bo_phan_id"/>
+                    <field name="nam_luong"/>
+                    <field name="tong_luong_nam"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="luong_nam_search">
+            <field name="model">luong_nam</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="bo_phan_id"/>
+                    <field name="nam_luong"/>
+                    <field name="tong_luong_nam"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_luong_nam_graph" model="ir.ui.view">
+            <field name="name">luong_nam_graph</field>
+            <field name="model">luong_nam</field>
+            <field name="arch" type="xml">
+                <graph string="Thống kê Lương Nhân Viên" sample="1" >
+                    <field name="nam_luong"/>
+                    <field name="tong_luong_nam"/>
+                    <field name="bo_phan_id" invisible="1"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="action_luong_nam" model="ir.actions.act_window">
+            <field name="name">Lương năm</field>
+            <field name="res_model">luong_nam</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="search_view_id" ref = "luong_nam_search"/>
+        </record>
+    </data>
+</odoo>
+        
+    

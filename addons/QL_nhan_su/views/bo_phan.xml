@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_bo_phan_form" model="ir.ui.view">
+            <field name="name">bo_phan</field>
+            <field name="model">bo_phan</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Bộ phận </div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="don_vi_id"/>
+                            <field name="ten_bo_phan"/>
+                            <field name="tt_nhan_vien_id"/>
+                            <field name="ten_nhan_vien"/>
+                            <field name="chuc_vu"/>
+                            <field name="luong_co_ban"/>
+                            <field name="phu_cap"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_bo_phan_tree" model="ir.ui.view">
+            <field name="name">bo_phan</field>
+            <field name="model">bo_phan</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="don_vi_id"/>
+                    <field name="ten_bo_phan"/>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="chuc_vu"/>
+                    <field name="luong_co_ban"/>
+                    <field name="phu_cap"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="bo_phan_search">
+            <field name="model">bo_phan</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="don_vi_id"/>
+                    <field name="ten_bo_phan"/>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="chuc_vu"/>
+                    <field name="luong_co_ban"/>
+                    <field name="phu_cap"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_bo_phan" model="ir.actions.act_window">
+            <field name="name">Bộ phận </field>
+            <field name="res_model">bo_phan</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref = "bo_phan_search"/>
+        </record>
+    </data>
+</odoo>
+        
+    

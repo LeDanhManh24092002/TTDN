@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_bao_hiem_form" model="ir.ui.view">
+            <field name="name">bao_hiem</field>
+            <field name="model">bao_hiem</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Bảo hiểm nhân viên</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="tt_nhan_vien_id"/>
+                            <field name="ten_nhan_vien"/>
+                            <field name="ten_bao_hiem"/>
+                            <field name="bo_phan_id"/>
+                            <field name="don_vi_id"/>
+                            <field name="loai_bao_hiem"/>
+                            <field name="tu_ngay"/>
+                            <field name="den_ngay"/>
+                            <field name="muc_dong"/>
+                            <field name="trang_thai"/>
+                            <field name="ghi_chu"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_bao_hiem_tree" model="ir.ui.view">
+            <field name="name">bao_hiem</field>
+            <field name="model">bao_hiem</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="ten_bao_hiem"/>
+                    <field name="bo_phan_id"/>
+                    <field name="don_vi_id"/>
+                    <field name="loai_bao_hiem"/>
+                    <field name="tu_ngay"/>
+                    <field name="den_ngay"/>
+                    <field name="muc_dong"/>
+                    <field name="trang_thai"/>
+                    <field name="ghi_chu"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="bao_hiem_search">
+            <field name="model">bao_hiem</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="ten_bao_hiem"/>
+                    <field name="bo_phan_id"/>
+                    <field name="don_vi_id"/>
+                    <field name="loai_bao_hiem"/>
+                    <field name="tu_ngay"/>
+                    <field name="den_ngay"/>
+                    <field name="muc_dong"/>
+                    <field name="trang_thai"/>
+                    <field name="ghi_chu"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_bao_hiem" model="ir.actions.act_window">
+            <field name="name">Bảo hiểm nhân viên</field>
+            <field name="res_model">bao_hiem</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref = "bao_hiem_search"/>
+        </record>
+    </data>
+</odoo>
+        
+    

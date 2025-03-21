@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_chung_chi_form" model="ir.ui.view">
+            <field name="name">chung_chi</field>
+            <field name="model">chung_chi</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Danh muc chứng chỉ</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="ten_chung_chi"/>
+                            <field name="loai"/>
+                            <field name="noi_cap"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_chung_chi_tree" model="ir.ui.view">
+            <field name="name">chung_chi</field>
+            <field name="model">chung_chi</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_chung_chi"/>
+                    <field name="loai"/>
+                    <field name="noi_cap"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="chung_chi_search">
+            <field name="model">chung_chi</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ten_chung_chi"/>
+                    <field name="loai"/>
+                    <field name="noi_cap"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_chung_chi" model="ir.actions.act_window">
+            <field name="name">Danh muc chứng chỉ</field>
+            <field name="res_model">chung_chi</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref = "chung_chi_search"/>
+        </record>
+    </data>
+</odoo>
+        
+    

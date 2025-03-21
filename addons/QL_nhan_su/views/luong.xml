@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_luong_form" model="ir.ui.view">
+            <field name="name">luong</field>
+            <field name="model">luong</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Lương nhân viên</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="tt_nhan_vien_id"/>
+                            <field name="ten_nhan_vien"/>
+                            <field name="bo_phan_id"/>
+                            <field name="thang_luong"/>
+                            <field name="ten_thang"/>
+                            <field name="luong_co_ban"/>
+                            <field name="phu_cap"/>
+                            <field name="thuong"/>
+                            <field name="khau_tru"/>
+                            <field name="bao_hiem_id"/>
+                            <field name="muc_dong"/>
+                            <field name="luong_chuyen_can"/>
+                            <field name="tong_luong"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_luong_tree" model="ir.ui.view">
+            <field name="name">luong</field>
+            <field name="model">luong</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="bo_phan_id"/>
+                    <field name="ten_thang"/>
+                    <field name="luong_co_ban"/>
+                    <field name="phu_cap"/>
+                    <field name="thuong"/>
+                    <field name="khau_tru"/>
+                    <field name="bao_hiem_id"/>
+                    <field name="muc_dong"/>
+                    <field name="luong_chuyen_can"/>
+                    <field name="tong_luong"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="luong_search">
+            <field name="model">luong</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="bo_phan_id"/>
+                    <field name="thang_luong"/>
+                    <field name="ten_thang"/>
+                    <field name="luong_co_ban"/>
+                    <field name="phu_cap"/>
+                    <field name="thuong"/>
+                    <field name="khau_tru"/>
+                    <field name="bao_hiem_id"/>
+                    <field name="muc_dong"/>
+                    <field name="luong_chuyen_can"/>
+                    <field name="tong_luong"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_luong" model="ir.actions.act_window">
+            <field name="name">Lương nhân viên</field>
+            <field name="res_model">luong</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref = "luong_search"/>
+        </record>
+    </data>
+</odoo>
+        
+    

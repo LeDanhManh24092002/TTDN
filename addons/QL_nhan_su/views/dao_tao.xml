@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_dao_tao_form" model="ir.ui.view">
+            <field name="name">dao_tao</field>
+            <field name="model">dao_tao</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">Đào tạo </div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="tieu_muc"/>
+                            <field name="tt_nhan_vien_id"/>
+                            <field name="ten_nhan_vien"/>
+                            <field name="bo_phan_id"/>
+                            <field name="don_vi_id"/>
+                            <field name="noi_dung"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_dao_tao_tree" model="ir.ui.view">
+            <field name="name">dao_tao</field>
+            <field name="model">dao_tao</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="tieu_muc"/>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="bo_phan_id"/>
+                    <field name="don_vi_id"/>
+                    <field name="noi_dung"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dao_tao_search">
+            <field name="model">dao_tao</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="tieu_muc"/>
+                    <field name="tt_nhan_vien_id"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="bo_phan_id"/>
+                    <field name="don_vi_id"/>
+                    <field name="noi_dung"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_dao_tao" model="ir.actions.act_window">
+            <field name="name">Đào tạo </field>
+            <field name="res_model">dao_tao</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref = "dao_tao_search"/>
+        </record>
+    </data>
+</odoo>
+        
+    

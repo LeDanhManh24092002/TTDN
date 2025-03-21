@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_tt_nhan_vien_form" model="ir.ui.view">
+            <field name="name">tt_nhan_vien</field>
+            <field name="model">tt_nhan_vien</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title" style="text-align:center; font-size:24px; font-weight:bold; margin-bottom:10px;">
+                            Thông tin nhân viên
+                        </div>
+
+                        <!-- Ảnh đại diện nhỏ trên góc phải -->
+                        <div style="position: absolute; top: 10px; right: 10px;">
+                            <field name="anh" widget="image" class="oe_avatar" options="{'size': [100, 100]}"/>
+                        </div>
+
+                        <group col="2" style="width: 100%; align-items: start;">
+                            <!-- Cột 1: Thông tin cá nhân -->
+                            <group>
+                                <separator string="Thông tin cá nhân"/>
+                                <field name="ma_nhan_vien"/>
+                                <field name="ten_nhan_vien"/>
+                                <field name="ngay_sinh"/>
+                                <field name="tuoi"/>
+                                <field name="cccd"/>
+                                <field name="que_quan"/>
+                                <field name="email"/>
+                                <field name="lien_lac"/>
+                            </group>
+
+                            <!-- Cột 2: Thông tin công việc -->
+                            <group>
+                                <separator string="Công việc"/>
+                                <field name="chuc_vu"/>
+                                <field name="ngay_bat_dau_lam"/>
+                                <field name="don_vi_id"/>
+                                <field name="bo_phan_id"/>
+                                <field name="bao_hiem_id"/>
+                                <field name="trang_thai"/>
+                            </group>
+                        </group>
+
+                        <!-- Thông tin gia đình -->
+                        <group col="3" style="margin-top:15px;">
+                            <group>
+                                <separator string="Thông tin Cha"/>
+                                <field name="ten_cha"/>
+                                <field name="nghe_cha"/>
+                                <field name="so_dien_thoai_cha"/>
+                            </group>
+
+                            <group>
+                                <separator string="Thông tin Mẹ"/>
+                                <field name="ten_me"/>
+                                <field name="nghe_me"/>
+                                <field name="so_dien_thoai_me"/>
+                            </group>
+
+                            <group>
+                                <separator string="Vợ/Chồng và Con cái"/>
+                                <field name="vo"/>
+                                <field name="so_dien_thoai_vo"/>
+                                <field name="con_cai"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Thông tin công việc">
+                                <field name="cong_viec_ids"/>
+                            </page>
+                            <page string="Dự án">
+                                <field name="lich_lam_viec_ids"/>
+                            </page>
+                            <page string="Trình độ học vấn">
+                                <field name="trinh_do_hoc_van_ids"/>
+                            </page>
+                            <page string="Lương">
+                                <field name="luong_ids"/>
+                            </page>
+                            <page string="Bằng khen">
+                                <field name="khen_thuong_ids"/>
+                            </page>
+                            <page string="Thưởng">
+                                <field name="thuong_ids"/>
+                            </page>
+                            <page string="Lương năm">
+                                <field name="luong_nam_ids"/>
+                            </page>
+                            <page string="Đào tạo">
+                                <field name="dao_tao_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tt_nhan_vien_tree" model="ir.ui.view">
+            <field name="name">tt_nhan_vien</field>
+            <field name="model">tt_nhan_vien</field>
+            <field name="arch" type="xml">
+                <tree decoration-success="trang_thai == 'dang_lam'"
+                    decoration-danger="trang_thai == 'nghi'"
+                    decoration-warning="trang_thai == 'nghi_phep'">
+                    <field name="ma_nhan_vien"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="ngay_sinh"/>
+                    <field name="tuoi"/>
+                    <field name="cccd"/>
+                    <field name="ngay_bat_dau_lam"/>
+                    <field name="que_quan"/>
+                    <field name="email"/>
+                    <field name="lien_lac"/>
+                    <field name="don_vi_id"/>
+                    <field name="bo_phan_id"/>
+                    <field name="chuc_vu"/>
+                    <field name="bao_hiem_id"/>
+                    <field name="anh" widget="image" class="oe_avatar" options="{'size': [80, 80]}"/>
+                    <field name="trang_thai"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="tt_nhan_vien_search">
+            <field name="model">tt_nhan_vien</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ma_nhan_vien"/>
+                    <field name="ten_nhan_vien"/>
+                    <field name="ngay_sinh"/>
+                    <field name="tuoi"/>
+                    <field name="cccd"/>
+                    <field name="ngay_bat_dau_lam"/>
+                    <field name="que_quan"/>
+                    <field name="email"/>
+                    <field name="lien_lac"/>
+                    <field name="don_vi_id"/>
+                    <field name="bo_phan_id"/>
+                    <field name="chuc_vu"/>
+                    <field name="bao_hiem_id"/>
+                    <field name="trang_thai"/>
+                    <searchpanel>
+                        <field name="don_vi_id" select="multi"/>
+                        <field name="bo_phan_id" select="multi"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_tt_nhan_vien_graph" model="ir.ui.view">
+            <field name="name">tt_nhan_vien_graph</field>
+            <field name="model">tt_nhan_vien</field>
+            <field name="arch" type="xml">
+                <graph string="Thống kê Nhân Viên">
+                    <field name="don_vi_id" type="row"/>
+                    <field name="bo_phan_id" type="row"/>
+                    <field name="id" type="measure" string="Số lượng nhân viên"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="action_tt_nhan_vien" model="ir.actions.act_window">
+            <field name="name">Thông tin nhân viên</field>
+            <field name="res_model">tt_nhan_vien</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="search_view_id" ref="tt_nhan_vien_search"/>
+        </record>
+    </data>
+</odoo>
